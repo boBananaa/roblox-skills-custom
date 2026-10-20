@@ -4,6 +4,22 @@ A collection of seven Roblox development skills for AI coding assistants, mainta
 
 **Status: initial instruction pack.** The skills support planning, implementation, and review. They are not a Roblox runtime library, a Studio plugin, or a guarantee that generated game code is production-ready. No framework or installer is bundled.
 
+## Install
+
+With Node.js 22.20 or later installed, run this from your project to choose the skills and coding assistants:
+
+```bash
+npx skills add boBananaa/roblox-skills-custom
+```
+
+To install all seven skills globally for Codex, making them available across projects:
+
+```bash
+npx skills add boBananaa/roblox-skills-custom --skill '*' -a codex -g
+```
+
+Omit `-g` for a project-only installation. These commands use the third-party [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
+
 ## Skills
 
 | Skill | Focus |
@@ -33,7 +49,7 @@ No particular UI framework, persistence library, networking wrapper, genre, or s
 
 Each `roblox-*` directory contains `SKILL.md`, supporting references, and optional Codex UI metadata in `agents/openai.yaml`. Install selected skill folders through your agent's supported skill workflow. For Codex, you can ask the built-in skill installer to install the desired folders from this repository, or copy the entire chosen folders into the project's `.agents/skills` directory. Consult the [current Codex skill documentation](https://developers.openai.com/codex/skills/) for discovery locations and installation behavior.
 
-Inspect existing skills with the same names before installing; do not overwrite a different pack or assume two identically named skills are merged. Copy each complete folder with its references, not just SKILL.md. No `npx` command, install hook, or automatic update mechanism is included.
+Inspect existing skills with the same names before installing; do not overwrite a different pack or assume two identically named skills are merged. For manual installation, copy each complete folder with its references, not just SKILL.md. The repository itself bundles no installer, install hook, or automatic update mechanism.
 
 Example requests after installation:
 
