@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox Animations"
+  short_description: "Plan reliable character and rig animations"
+  default_prompt: "Use $roblox-animations to inspect my project and propose a plan before implementing changes."

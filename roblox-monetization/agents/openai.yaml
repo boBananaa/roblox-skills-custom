@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox Purchases"
+  short_description: "Plan durable purchases and trusted economy flows"
+  default_prompt: "Use $roblox-monetization to inspect my project and propose a plan before implementing changes."

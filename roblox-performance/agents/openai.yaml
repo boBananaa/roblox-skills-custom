@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox Performance"
+  short_description: "Measure and improve Roblox client and server costs"
+  default_prompt: "Use $roblox-performance to inspect my project and propose a plan before implementing changes."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox Player Data"
+  short_description: "Design resilient player data and save workflows"
+  default_prompt: "Use $roblox-datastores to inspect my project and propose a plan before implementing changes."

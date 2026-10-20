@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox UI"
+  short_description: "Plan and build responsive Roblox interfaces"
+  default_prompt: "Use $roblox-gui to inspect my project and propose a plan before implementing changes."

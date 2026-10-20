@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox Security"
+  short_description: "Review authority boundaries and exploit resistance"
+  default_prompt: "Use $roblox-security to inspect my project and propose a plan before implementing changes."

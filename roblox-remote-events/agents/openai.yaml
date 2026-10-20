@@ -1,0 +1,4 @@
+interface:
+  display_name: "Roblox Networking"
+  short_description: "Design validated client and server communication"
+  default_prompt: "Use $roblox-remote-events to inspect my project and propose a plan before implementing changes."
