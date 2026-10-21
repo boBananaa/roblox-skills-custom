@@ -1,6 +1,6 @@
 ---
 name: roblox-gui
-description: Plan, implement, and review Roblox HUDs, menus, inventories, shops, world-space UI, and Studio plugin panels. Use for responsive layout, UI state, input, screenshot-inspired design, or adding reusable UI techniques to this skill.
+description: Plan, implement, and review Roblox HUDs, menus, inventories, shops, world-space UI, and Studio plugin panels. Use for responsive layout, UI state, input, screenshot-inspired design, spectator-friendly minigame lobby layouts, or adding reusable UI techniques to this skill.
 ---
 
 # Roblox UI
@@ -40,6 +40,17 @@ Use a coherent visual direction that suits the game. Avoid prescribing the same 
 - Design loading, empty, disabled, error, pending, and success states where applicable. Close stale requests and handle reopening a screen while a previous request is pending.
 - Give every component/controller an owner that disconnects events, cancels work/tweens, and removes owned instances on teardown. Use the existing cleanup library if there is one.
 - Treat UI persistence across respawns and character-bound bindings as separate decisions. Rebind on CharacterAdded and release the old character's listeners.
+
+## Minigame lobbies and spectator views
+
+Maintainer preference: usually place the active minigame arena below and in view of the spawn/lobby baseplate, so newly joined and eliminated players can watch their friends playing. Treat this as a default for minigame layouts, not a requirement for every map.
+
+- Prefer an arena offset beside and below the lobby. Directly stacking it underneath can let the opaque lobby floor block the action. Choose the horizontal offset and vertical separation together to expose the playing surface from accessible lobby edges.
+- Preserve safe spectator boundaries, including entrance gaps. Account for scenery, curbs, arena walls, and HUD panels that could obscure the action. Add viewing space only when needed and within the approved scope.
+- Verify from normal player eye height at several reachable lobby viewing spots. Inspect a screenshot with the actual HUD and sample sightlines to the near, middle, far, and side regions of the arena. An aerial Studio overview alone does not establish visibility. When using raycasts to check visual occlusion, exclude fully transparent spectator barriers; keep opaque scenery and floors in the check.
+- Do not add spectator cameras, round logic, or teleport behavior unless requested.
+
+Tested example, not fixed dimensions: a roughly 160-by-160 lobby with its floor at Y=6 and a 192-by-192 arena centered 220 studs to one side, with its surface at Y=-30. At eye height 5.5 studs above the lobby floor, three viewing spots near that edge had 27 clear sampled sightlines across the arena; a player-height screenshot also showed the playing surface with the HUD present. The maintainer preferred this arrangement to the arena centered directly beneath the lobby at Y=-100. Adapt these proportions to the actual map and camera, then verify again; this example does not establish visibility from every lobby position or on every device.
 
 ## Verify and report
 
