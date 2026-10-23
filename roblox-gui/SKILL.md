@@ -45,6 +45,13 @@ For screenshot-inspired reward calendars, login bonuses, or milestone grids, rea
 Use its card hierarchy, state distinctions, and small-screen adaptations when the
 requested interface fits; do not apply this colorful style to every game.
 
+## Lobby leaderboards and navigation
+
+For lobby ranking boards, avatar showcases, overhead-label overlap, or persistent
+edge navigation, read
+[lobby-leaderboards-hud.md](references/design-patterns/lobby-leaderboards-hud.md).
+Adapt its hierarchy and visibility checks to the actual map and target inputs.
+
 ## Implementation decisions
 
 - Keep UI presentation and state separate from authoritative inventory, currency, rewards, and purchases. Buttons request actions; the server validates and returns the resulting state.

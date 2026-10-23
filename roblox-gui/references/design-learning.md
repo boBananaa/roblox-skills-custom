@@ -59,3 +59,5 @@ Do not describe a proposal as a learned, tested implementation. An API documenta
 - [Medieval and fantasy UI](design-patterns/medieval-fantasy-ui.md): framed resource displays and compact tool layouts, informed by historical Deepwoken captures. Use only when the requested theme fits; observations do not establish current-game behavior.
 
 - [Rewards and progression panels](design-patterns/rewards-progression-ui.md): repeated reward-card hierarchy, milestone emphasis, explicit claim/locked/claimed states, and responsive grid design informed by a supplied desktop capture. Schedule and interaction behavior remain unverified.
+
+- [Lobby leaderboards and compact navigation](design-patterns/lobby-leaderboards-hud.md): aligned ranking rows, labeled edge navigation, player showcases, metric consistency, and overhead-label occlusion checks from a supplied lobby capture. Ranking scope, data behavior, and interactions remain unverified.
