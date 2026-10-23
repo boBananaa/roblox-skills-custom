@@ -1,6 +1,6 @@
 ---
 name: roblox-gui
-description: Plan, implement, and review Roblox HUDs, menus, inventories, shops, world-space UI, and Studio plugin panels. Use for responsive layout, UI state, input, screenshot-inspired design, spectator-friendly minigame lobby layouts, or adding reusable UI techniques to this skill.
+description: Plan, implement, and review Roblox HUDs, menus, inventories, shops, world-space UI, and Studio plugin panels. Use for responsive layout, UI state, input, screenshot-inspired design, medieval/fantasy interfaces, spectator-friendly minigame lobby layouts, or adding reusable UI techniques to this skill.
 ---
 
 # Roblox UI
@@ -30,6 +30,20 @@ For reference images or requests to grow the public skill pack, read [design-lea
 Translate the reference into hierarchy, proportions, spacing, typography roles, surface treatments, and component states. Keep uncertain measurements approximate. Mark motion, interaction, fonts, and source code as unknown when the screenshot cannot establish them. Choose Roblox-native layout tools or existing framework components for the desired result, rather than guessing how the source was built.
 
 Use a coherent visual direction that suits the game. Avoid prescribing the same palette, corner radius, or card layout for every project. Integrate unfamiliar ideas when they help the requested design and explain the tradeoff.
+
+## Medieval and fantasy interfaces
+
+When the user requests medieval, fantasy, or Deepwoken-inspired UI, read
+[medieval-fantasy-ui.md](references/design-patterns/medieval-fantasy-ui.md). Use its
+reference-analysis and hierarchy techniques within the requested palette and
+execution context; it is an optional direction, not the default for every game.
+
+## Colorful rewards and progression panels
+
+For screenshot-inspired reward calendars, login bonuses, or milestone grids, read
+[rewards-progression-ui.md](references/design-patterns/rewards-progression-ui.md).
+Use its card hierarchy, state distinctions, and small-screen adaptations when the
+requested interface fits; do not apply this colorful style to every game.
 
 ## Implementation decisions
 

@@ -1,6 +1,6 @@
 # Learn reusable design techniques from references
 
-Use this workflow when reviewing screenshots, gathering visual direction, or updating the public skill pack from references. There are no screenshot-derived style preferences in this pack yet.
+Use this workflow when reviewing screenshots, gathering visual direction, or updating the public skill pack from references. Reference-derived patterns are listed below; they are conditional techniques, not universal style preferences.
 
 ## 1. Establish what the reference is for
 
@@ -56,4 +56,6 @@ Do not describe a proposal as a learned, tested implementation. An API documenta
 
 ## Pattern catalog
 
-No screenshot patterns have been added yet. Add links here only when real reference analysis produces useful guidance.
+- [Medieval and fantasy UI](design-patterns/medieval-fantasy-ui.md): framed resource displays and compact tool layouts, informed by historical Deepwoken captures. Use only when the requested theme fits; observations do not establish current-game behavior.
+
+- [Rewards and progression panels](design-patterns/rewards-progression-ui.md): repeated reward-card hierarchy, milestone emphasis, explicit claim/locked/claimed states, and responsive grid design informed by a supplied desktop capture. Schedule and interaction behavior remain unverified.
