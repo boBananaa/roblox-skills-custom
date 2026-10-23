@@ -52,6 +52,13 @@ markers, overhead-label overlap, or persistent edge navigation, read
 [lobby-leaderboards-hud.md](references/design-patterns/lobby-leaderboards-hud.md).
 Adapt its hierarchy and visibility checks to the actual map and target inputs.
 
+## Class and loadout selection
+
+For class lists, character previews, equipment slots, or explicitly requested
+class-roll screens, read
+[class-loadout-ui.md](references/design-patterns/class-loadout-ui.md). Separate
+selection from equipped state and keep acquisition and purchase behavior explicit.
+
 ## Implementation decisions
 
 - Keep UI presentation and state separate from authoritative inventory, currency, rewards, and purchases. Buttons request actions; the server validates and returns the resulting state.
