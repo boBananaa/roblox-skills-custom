@@ -59,6 +59,14 @@ class-roll screens, read
 [class-loadout-ui.md](references/design-patterns/class-loadout-ui.md). Separate
 selection from equipped state and keep acquisition and purchase behavior explicit.
 
+## Cinematic title menus
+
+For expressive title screens with a strong scene, oversized original branding,
+and sparse navigation, read
+[cinematic-title-menus.md](references/design-patterns/cinematic-title-menus.md).
+The maintainer likes this direction; use it when the project fits, while keeping
+entry choices clear and the composition adaptable across devices.
+
 ## Implementation decisions
 
 - Keep UI presentation and state separate from authoritative inventory, currency, rewards, and purchases. Buttons request actions; the server validates and returns the resulting state.
