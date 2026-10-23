@@ -62,6 +62,6 @@ Do not describe a proposal as a learned, tested implementation. An API documenta
 
 - [Lobby leaderboards and compact navigation](design-patterns/lobby-leaderboards-hud.md): aligned ranking rows, labeled edge navigation, player showcases, service kiosks, queue/destination information, metric consistency, glow readability, and overhead-label occlusion checks from supplied lobby captures. Ranking scope, queue/travel behavior, and interactions remain unverified.
 
-- [Class and loadout selection](design-patterns/class-loadout-ui.md): class-list/preview/details hierarchy, equipped versus selected states, slot context, currency clarity, and conditional random-acquisition guidance from a supplied class-screen capture. Roll mechanics, purchases, and interactions remain unverified.
+- [Class and loadout selection](design-patterns/class-loadout-ui.md): class-list/preview/details hierarchy, equipped versus selected states, slot context, currency clarity, and conditional random-acquisition guidance; comparative PHIGHTING! captures add coordinated hero accents, highlighted roster portraits, descriptors, ability presentation, and model-framing checks. Transitions, abilities, roll mechanics, purchases, and interactions remain unverified.
 
 - [Cinematic title menus](design-patterns/cinematic-title-menus.md): vivid scene composition, oversized expressive branding, high-contrast text actions, and sparse navigation from a PHIGHTING! capture the maintainer explicitly liked. Camera motion and interaction behavior remain unverified; this is an optional style direction.

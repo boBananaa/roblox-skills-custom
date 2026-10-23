@@ -54,10 +54,11 @@ Adapt its hierarchy and visibility checks to the actual map and target inputs.
 
 ## Class and loadout selection
 
-For class lists, character previews, equipment slots, or explicitly requested
+For class/hero rosters, coordinated character previews, equipment slots, or explicitly requested
 class-roll screens, read
 [class-loadout-ui.md](references/design-patterns/class-loadout-ui.md). Separate
-selection from equipped state and keep acquisition and purchase behavior explicit.
+selection from equipped state, coordinate candidate identity across regions, and
+keep acquisition and purchase behavior explicit.
 
 ## Cinematic title menus
 
