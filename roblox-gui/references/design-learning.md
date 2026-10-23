@@ -60,4 +60,4 @@ Do not describe a proposal as a learned, tested implementation. An API documenta
 
 - [Rewards and progression panels](design-patterns/rewards-progression-ui.md): repeated reward-card hierarchy, milestone emphasis, explicit claim/locked/claimed states, and responsive grid design informed by a supplied desktop capture. Schedule and interaction behavior remain unverified.
 
-- [Lobby leaderboards and compact navigation](design-patterns/lobby-leaderboards-hud.md): aligned ranking rows, labeled edge navigation, player showcases, metric consistency, and overhead-label occlusion checks from a supplied lobby capture. Ranking scope, data behavior, and interactions remain unverified.
+- [Lobby leaderboards and compact navigation](design-patterns/lobby-leaderboards-hud.md): aligned ranking rows, labeled edge navigation, player showcases, service kiosks, queue/destination information, metric consistency, glow readability, and overhead-label occlusion checks from supplied lobby captures. Ranking scope, queue/travel behavior, and interactions remain unverified.

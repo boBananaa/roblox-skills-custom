@@ -47,8 +47,8 @@ requested interface fits; do not apply this colorful style to every game.
 
 ## Lobby leaderboards and navigation
 
-For lobby ranking boards, avatar showcases, overhead-label overlap, or persistent
-edge navigation, read
+For lobby ranking boards, avatar showcases, kiosks, queue pads, destination
+markers, overhead-label overlap, or persistent edge navigation, read
 [lobby-leaderboards-hud.md](references/design-patterns/lobby-leaderboards-hud.md).
 Adapt its hierarchy and visibility checks to the actual map and target inputs.
 

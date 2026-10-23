@@ -1,7 +1,8 @@
 # Lobby leaderboards and compact navigation
 
 Use when: designing lobby ranking displays, player showcase areas, overhead labels,
-or persistent navigation around a visible 3D play space. These patterns do not
+class/service kiosks, queue pads, destination markers, or persistent navigation
+around a visible 3D play space. These patterns do not
 require a retro theme, wooden board, trophy statues, or the reference palette.
 
 Status: screenshot observations and proposed adaptations, reviewed 2026-10-22.
@@ -33,6 +34,25 @@ global versus server rankings, refresh frequency, scroll interaction, purchase
 behavior, controller focus, or mobile arrangements. The screenshot proves visible
 composition, not that any control works or that the ranking service is reliable.
 
+### Additional capture: service kiosk and queue pads
+
+A second user-supplied lobby capture, also supplied 2026-10-22, shows a Classes
+stall with an NPC, a counter, and a bounded circular floor area. Nearby glowing
+pads have a NORMAL heading, a 1/4 count, a TOUCH TO CREATE label, and a departure
+countdown. A distant marker labels Chapter 3 & More above question-mark shapes.
+The currency, invite, and right-edge navigation composition matches the earlier
+capture, despite the changed world view.
+
+The overhead player label overlaps the Classes sign. The queue area combines pale
+text, overlapping labels, and nearly white glow, making the hierarchy harder to
+read. These are observations from one camera angle, not proof the interface is
+unreadable from all positions.
+
+The visible wording suggests service access, queue creation, capacity, and travel,
+but does not establish trigger volumes, selection rules, party ownership, countdown
+behavior, available modes, destination locking, or a successful teleport. Do not
+infer class abilities, an economy, or unavailable chapters from the scenery.
+
 ## Transferable layout decisions
 
 Keep ranking columns consistent: a narrow rank region, reserved portrait region,
@@ -56,6 +76,45 @@ must adapt to safe areas, touch movement/jump controls, and other game UI. Match
 icon weight, spacing, outline, and label treatment without copying the artwork.
 Keep a plus control adjacent to the value or action it affects, and give it an
 unambiguous accessible purpose; the symbol alone does not establish its behavior.
+
+## Service kiosks, queues, and destination markers
+
+Let the world communicate where an activity happens: a named kiosk, a recognizable
+NPC or prop, a clear approach area, and a contextual action can work together.
+Keep the service name readable above or beside the approach area rather than in
+the same visual band as player nameplates. Make the actual interaction explicit;
+do not assume that stepping on any decorative circle opens a menu.
+
+For a queue, organize the information in a stable order: mode/destination,
+occupancy/capacity, current state, then the available action or time to departure.
+Separate Create, Join, Full, Starting, and Departing states rather than stacking
+all their labels. A countdown needs a subject such as "Departing in 12s" and
+should remain understandable when multiple pads are close together. Show the
+local player's membership and a way to leave when the design allows it.
+
+Standing on a pad, pressing an explicit prompt, and activating a screen button
+are different interaction designs. Choose one that suits the project and input
+methods; do not blindly reproduce TOUCH TO CREATE on controller or desktop.
+If presence triggers joining, use the server's actual membership state, handle
+multiple character body parts and repeated entry, and avoid accidental repeated
+join/leave cycles at the edge. These are implementation proposals, not evidence
+about the reference game's source code.
+
+Keep glow below the level where it erases silhouettes, pad boundaries, or reading
+surfaces. Put queue text on a quiet surface or offset it from bright effects;
+heavier strokes alone will not resolve overlapping labels. Preserve distinct
+labels when crowded pads, characters, or distant markers project onto one another.
+
+Destination markers should describe what the player can do. Question marks can
+communicate mystery but cannot by themselves explain whether content is locked,
+unfinished, or selectable. If there is a restriction, display its real reason and
+next step; if not, do not invent an unlock requirement based on the screenshot.
+
+Keep queue creation, admission, capacity, countdown deadlines, and travel outcomes
+authoritative. Define whether departures accept late joiners and what happens on
+owner disconnect, cancellation, or failed transfer. Report a failed or pending
+transfer without implying that players reached the destination. Specify and test
+these behaviors only if implementing queue/travel functionality is authorized.
 
 ## World-space readability and occlusion
 
@@ -106,3 +165,9 @@ For data-driven boards, test refresh failure, empty results, stale results, chan
 rank order, missing avatar images, and repeated opening/closing. Verify persistent
 score behavior separately from the visual layout. Do not claim backend reliability
 or performance from the reference image.
+
+For kiosks and queues, test view angles, nameplate/sign overlap, crowding, different
+effect/graphics settings, and long localized status text. If implemented, exercise
+simultaneous joins to the last slot, edge re-entry, leave during countdown, owner
+disconnect, cancellation, and failed travel. Check that the same membership and
+departure state is visible to every affected client, not just the activating player.
