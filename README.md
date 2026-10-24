@@ -2,23 +2,58 @@
 
 A collection of seven Roblox development skills for AI coding assistants, maintained by [boBananaa](https://github.com/boBananaa).
 
-**Status: initial instruction pack.** The skills support planning, implementation, and review. They are not a Roblox runtime library, a Studio plugin, or a guarantee that generated game code is production-ready. No framework or installer is bundled.
+**Status: evolving instruction pack.** The skills support planning, implementation, and review. They are not a Roblox runtime library, a Studio plugin, or a guarantee that generated game code is production-ready. No framework or installer is bundled.
+
+## Start with the UI designer
+
+[**Explore the UI patterns**](#ui-design-patterns) · [Install](#install) · [All seven skills](#skills) · [Help](#help-and-contributions)
+
+Use `roblox-gui` to turn a screen idea or reference into a concrete Roblox UI plan: layout, visual hierarchy, input, state, and checks for the actual project. Supporting patterns cover rewards, lobby HUDs, character selection, cinematic menus, and medieval interfaces.
+
+A first request to try after installing:
+
+```text
+Use the roblox-gui skill to inspect my existing UI setup and plan a character
+selector with a roster, character preview, role details, and ability information.
+Adapt it for phone and controller input. Show the plan before editing.
+```
+
+**Expected result:** a project-specific plan with proposed components, states, and validation steps. After approval, the assistant can help implement it using the tools available in your environment. Installing instructions alone does not connect it to Roblox Studio.
 
 ## Install
 
-With Node.js 22.20 or later installed, run this from your project to choose the skills and coding assistants:
+You need an AI coding assistant that supports agent skills. The CLI route also needs Node.js 22.20 or later and network access. Check existing skills with the same names before installing so you can preserve local customizations.
+
+Run this from your game project's folder to install the UI designer for OpenCode:
+
+```bash
+npx skills add boBananaa/roblox-skills-custom --skill roblox-gui -a opencode
+```
+
+For Codex, replace `-a opencode` with `-a codex`. Add `-g` for installation across projects. These commands use the third-party [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md), which downloads the skill instructions and supporting files.
+
+Want the full pack or another assistant? Choose interactively:
 
 ```bash
 npx skills add boBananaa/roblox-skills-custom
 ```
 
-To install all seven skills globally for Codex, making them available across projects:
+### Manual OpenCode setup
 
-```bash
-npx skills add boBananaa/roblox-skills-custom --skill '*' -a codex -g
+Download the repository using GitHub's **Code → Download ZIP**, then copy the complete `roblox-gui` folder into your game project:
+
+```text
+.opencode/
+  skills/
+    roblox-gui/
+      SKILL.md
+      references/
+      agents/
 ```
 
-Omit `-g` for a project-only installation. These commands use the third-party [Skills CLI](https://github.com/vercel-labs/skills/blob/main/docs/commands.md).
+Keep the references with `SKILL.md`. Open your project in OpenCode and ask it to load the `roblox-gui` skill. It should appear among the available skills; if it does not, check the folder nesting, exact `SKILL.md` filename, and skill permissions. See [OpenCode's skill discovery and troubleshooting guide](https://opencode.ai/docs/skills/) for details.
+
+Manual copies do not update themselves. Before replacing one, compare any local edits with the repository version. Other assistants can use the complete skill folders through their supported installation workflow.
 
 ## Skills
 
@@ -45,31 +80,31 @@ UI is the main emphasis, with the other skills supporting the systems behind it.
 
 No particular UI framework, persistence library, networking wrapper, genre, or sync system is mandatory. The pack can support Studio/Script Sync, Rojo, or manual authoring after identifying the actual project setup.
 
-## Use locally
+## UI design patterns
 
-Each `roblox-*` directory contains `SKILL.md`, supporting references, and optional Codex UI metadata in `agents/openai.yaml`. Install selected skill folders through your agent's supported skill workflow. For Codex, you can ask the built-in skill installer to install the desired folders from this repository, or copy the entire chosen folders into the project's `.agents/skills` directory. Consult the [current Codex skill documentation](https://developers.openai.com/codex/skills/) for discovery locations and installation behavior.
+Choose a pattern for the screen you are building. These are reusable techniques with stated limits, rather than a single required art style.
 
-Inspect existing skills with the same names before installing; do not overwrite a different pack or assume two identically named skills are merged. For manual installation, copy each complete folder with its references, not just SKILL.md. The repository itself bundles no installer, install hook, or automatic update mechanism.
+- **[Character and loadout selection](roblox-gui/references/design-patterns/class-loadout-ui.md):** coordinate the roster, preview, role tags, ability information, and selected character's accent color; frame large equipment without covering controls.
+- **[Cinematic title menus](roblox-gui/references/design-patterns/cinematic-title-menus.md):** combine an expressive title, a vivid scene, and a small set of readable actions.
+- **[Rewards and progression](roblox-gui/references/design-patterns/rewards-progression-ui.md):** organize repeated cards, emphasize milestones, and distinguish claimable, locked, and claimed rewards.
+- **[Lobby leaderboards and HUDs](roblox-gui/references/design-patterns/lobby-leaderboards-hud.md):** align rankings, label compact navigation, clarify queue information, and check world-label occlusion.
+- **[Medieval and fantasy UI](roblox-gui/references/design-patterns/medieval-fantasy-ui.md):** use themed resource frames and compact tool layouts when that visual direction fits.
 
-Example requests after installation:
+These notes include written observations from supplied references and proposed Roblox adaptations. They do not establish the source games' implementation, animations, or interaction behavior. Private screenshots and third-party reference images are not bundled.
 
-```text
-Use $roblox-gui to inspect my current UI stack and plan a responsive inventory screen.
+To add a reference, tell the assistant what you like and whether it is for one screen or a lasting preference. The [design-learning workflow](roblox-gui/references/design-learning.md) separates visible evidence from inference and records how a proposed technique should be checked.
 
-Use $roblox-monetization to review how our receipt handler integrates with saved profiles.
+## Scope and validation
 
-Use $roblox-performance to propose a measured investigation of inventory-opening stutters.
-```
+The pack supplies instructions, supporting references, and optional Codex UI metadata in `agents/openai.yaml`. It bundles no runtime library, Studio plugin, installer, or automatic updater. It does not modify an experience on installation.
 
-Installing these skills does not connect an agent to Studio or a private game, and does not modify an experience. Source checks, mocked behavior, Studio visuals, multi-client replication, device performance, and live service behavior are separate validation results.
+The [initial evaluation](EVALUATION.md) records source checks and independent scenario walkthroughs from **2026-10-20**, along with their limits. Later UI patterns have their own evidence and verification notes. Neither a walkthrough nor a screenshot analysis establishes working game code, device performance, purchase delivery, or multiplayer behavior. Changing APIs and platform policies must be checked when used.
 
-## Grow the design guidance
+## Help and contributions
 
-Send screenshots with what you like and whether the direction is for one project or a lasting preference. The GUI skill's [design-learning workflow](roblox-gui/references/design-learning.md) turns observations into scoped techniques, Roblox implementation proposals, and verified notes. It distinguishes visible evidence from inferred behavior and does not assume exact fonts, animation timings, or source code from a still image.
+For an unclear instruction or proposed improvement, [open an issue](https://github.com/boBananaa/roblox-skills-custom/issues). Include the affected skill, your assistant and project setup, the task you attempted, and the observed problem. Remove credentials, private game details, and personal information from examples.
 
-There are no screenshot-derived patterns yet. Future public updates can include written analysis and original examples; private screenshots and third-party images are not uploaded by default. Skill changes and publication follow the approved plan.
-
-See [MAINTAINING.md](MAINTAINING.md) for validation and source-review practices and [EVALUATION.md](EVALUATION.md) for the initial independent review and its limits. The initial official-documentation review date is **2026-10-20**; changing APIs, policy, pricing, and library versions must be rechecked when used.
+For a change, read [MAINTAINING.md](MAINTAINING.md), keep the diff focused on the skill that owns the decision, and explain what you checked. Preserve the distinction between observed references, proposed behavior, and tested implementation.
 
 ## Background
 
